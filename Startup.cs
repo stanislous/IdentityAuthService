@@ -21,15 +21,17 @@ public class Startup(IConfiguration configuration)
                     .AllowAnyHeader();
             });
         });
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(Configuration.GetValue<string>("ConnectionStrings:DefaultConnection")));
-        
-        services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            {
-                options.User.RequireUniqueEmail = false;
-            })
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders();
+
+        // This service can be used for Identity Databases
+        //services.AddDbContext<ApplicationDbContext>(options =>
+        //    options.UseSqlServer(Configuration.GetValue<string>("ConnectionStrings:DefaultConnection")));
+
+        //services.AddIdentity<IdentityUser, IdentityRole>(options =>
+        //    {
+        //        options.User.RequireUniqueEmail = false;
+        //    })
+        //    .AddEntityFrameworkStores<ApplicationDbContext>()
+        //    .AddDefaultTokenProviders();
 
         services.AddControllers();
         services.AddScoped<AuthService>();

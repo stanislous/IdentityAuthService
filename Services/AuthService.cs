@@ -7,7 +7,7 @@ public class AuthService
 {
     public async Task<B2CResponseModel> UserLoginValidation(InputClaimsModel inputClaim)
     {
-        var user = TestUserData.UserData.GetUser(inputClaim.SignInName);
+        var user = TestUserData.UserData.GetUser(inputClaim.SignInName, inputClaim.Password);
         var outputClaims = new B2CResponseModel("", HttpStatusCode.OK) { status = 200 };
 
         if (user != null)
@@ -25,7 +25,7 @@ public class AuthService
             }
             catch (Exception ex)
             {
-                return new B2CResponseModel("Internal Error", HttpStatusCode.BadGateway) { status = 502 };
+                return new B2CResponseModel($"Internal Error - {ex.Message}", HttpStatusCode.BadGateway) { status = 502 };
             }
         }
 
@@ -36,7 +36,7 @@ public class AuthService
             return outputClaims;
         }
 
-        return new B2CResponseModel("Invalid username.", HttpStatusCode.Conflict) { status = 409 };
+        return new B2CResponseModel("Invalid username or password.", HttpStatusCode.Conflict) { status = 409 };
     }
 
     public async Task<bool> UserSignUpValidation(SignUpInputClaimModel signUpInputClaimModel)
