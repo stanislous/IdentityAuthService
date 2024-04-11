@@ -11,7 +11,7 @@ public static class UserData
             UserFirstName = "John",
             UserLastName = "Doe",
             UserEmailAddress = "john.doe@example.com",
-            UserPassword = "abcd1234",
+            UserPassword = "1qaz@WSX",
             UserPhoneNumber = "1234567890",
             UserAddress = "123 Main St, Anytown, USA",
             IsMigrated = false
@@ -21,7 +21,7 @@ public static class UserData
             UserFirstName = "Jane",
             UserLastName = "Smith",
             UserEmailAddress = "jane.smith@example.com",
-            UserPassword = "abcd1234",
+            UserPassword = "1qaz@WSX",
             UserPhoneNumber = "9876543210",
             UserAddress = "456 Elm St, Othertown, USA",
             IsMigrated = false
@@ -31,7 +31,7 @@ public static class UserData
             UserFirstName = "Alice",
             UserLastName = "Johnson",
             UserEmailAddress = "alice.johnson@example.com",
-            UserPassword = "abcd1234",
+            UserPassword = "1qaz@WSX",
             UserPhoneNumber = "5556667777",
             UserAddress = "789 Oak St, Anothertown, USA",
             IsMigrated = false
