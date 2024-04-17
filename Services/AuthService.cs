@@ -32,7 +32,7 @@ public class AuthService
         if (user is { IsMigrated: true })
         {
             outputClaims.needToMigrate = null;
-            outputClaims.roles = "Admin";
+            outputClaims.roles = "Admin,Registered";
             return outputClaims;
         }
 
