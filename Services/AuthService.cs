@@ -20,7 +20,7 @@ public class AuthService
                 outputClaims.displayName = user.UserFirstName + " " + user.UserLastName;
                 outputClaims.surName = user.UserFirstName;
                 outputClaims.givenName = user.UserFirstName;
-                outputClaims.roles = "Admin";
+                outputClaims.roles = "Admin,Registered";
                 return outputClaims;
             }
             catch (Exception ex)
